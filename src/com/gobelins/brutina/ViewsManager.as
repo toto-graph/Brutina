@@ -1,5 +1,6 @@
 package com.gobelins.brutina {
 import com.gobelins.brutina.Views.HomeView;
+import com.gobelins.brutina.Views.TestView;
 
 import starling.display.Sprite;
 import starling.events.Event;
@@ -12,6 +13,7 @@ public class ViewsManager extends Sprite {
     public function ViewsManager() {
         views = new Array();
         views[Constants.VIEW_HOME] = new HomeView();
+        views[Constants.VIEW_TEST] = new TestView();
 
         this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
     }

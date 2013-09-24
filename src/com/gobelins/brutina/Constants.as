@@ -6,4 +6,5 @@ public class Constants {
     public static const STAGE_HEIGHT:int = 480;
 
     public static const VIEW_HOME:int = 0;
+    public static const VIEW_TEST:int = 1;
 }}
