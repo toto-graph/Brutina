@@ -19,6 +19,7 @@ public class Brutina extends Sprite
     private var _starling:Starling;
     private var _splashScreen:Bitmap;
     private var _viewPort:Rectangle;
+    private var _assets:AssetManager;
 
     public function Brutina() : void
     {
@@ -41,8 +42,8 @@ public class Brutina extends Sprite
 
         // create the AssetManager, which handles all required assets for this resolution
         var scaleFactor:int = _viewPort.width < 480 ? 1 : 2; // midway between 320 and 640
-        var assets:AssetManager = new AssetManager(scaleFactor);
-        assets.verbose = Capabilities.isDebugger;
+        _assets = new AssetManager(scaleFactor);
+        _assets.verbose = Capabilities.isDebugger;
 
         showSplashScreen();
 
@@ -55,21 +56,23 @@ public class Brutina extends Sprite
         _starling.start();
 
         // launch Game
-        _starling.addEventListener(starling.events.Event.ROOT_CREATED,
-            function onRootCreated (event:Object, app:Game):void {
-                _starling.removeEventListener(starling.events.Event.ROOT_CREATED, onRootCreated);
-
-                removeChild(_splashScreen);
-                app.init(assets);
-
-                trace(1);
-            }
-        );
+        _starling.addEventListener(starling.events.Event.ROOT_CREATED, onRootCreated);
 
         // When the game becomes inactive, we pause Starling; otherwise, the enter frame event
         // would report a very long 'passedTime' when the app is reactivated.
         NativeApplication.nativeApplication.addEventListener( flash.events.Event.ACTIVATE, function (e:*):void { _starling.start(); });
         NativeApplication.nativeApplication.addEventListener( flash.events.Event.DEACTIVATE, function (e:*):void { _starling.stop(); });
+    }
+
+    private function onRootCreated(event:Object, app:Game):void {
+        _starling.removeEventListener(starling.events.Event.ROOT_CREATED, onRootCreated);
+
+        hideSplashScreen();
+        app.init(_assets);
+    }
+
+    private function hideSplashScreen():void {
+        removeChild(_splashScreen);
     }
 
     private function showSplashScreen():void {
