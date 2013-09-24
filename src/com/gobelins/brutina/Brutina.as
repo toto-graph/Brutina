@@ -55,6 +55,8 @@ public class Brutina extends Sprite
                 _starling.removeEventListener(starling.events.Event.ROOT_CREATED, onRootCreated);
 
                 app.init(assets);
+
+                trace(1);
             }
         );
 
