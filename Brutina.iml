@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="Brutina">
+    <configurations>
+      <configuration name="Brutina" target-platform="Mobile" pure-as="true" main-class="com.gobelins.brutina.Brutina" output-file="Brutina.swf" output-folder="$MODULE_DIR$/out/production/Brutina">
+        <dependencies target-player="11.8">
+          <entries>
+            <entry library-id="40287de4-b619-48c4-90a1-c78dcb771eb1">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="AIRSDK_Compiler" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Brutina-app.xml" package-file-name="Brutina" />
+        <packaging-ios enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Brutina-app.xml" package-file-name="Brutina" />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="AIRSDK_Compiler" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="40287de4-b619-48c4-90a1-c78dcb771eb1" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../PrimaryFeather-Starling-Framework-0ac3592/starling/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../PrimaryFeather-Starling-Framework-0ac3592/starling/src" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../../PrimaryFeather-Starling-Framework-0ac3592/starling/bin" recursive="false" />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
