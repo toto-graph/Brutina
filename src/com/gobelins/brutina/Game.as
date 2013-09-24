@@ -15,7 +15,7 @@ public class Game extends Sprite
         addChild(views);
     }
 
-    public function init(_assets:AssetManager):void {
-        assets = _assets;
+    public function init(a:AssetManager):void {
+        assets = a;
     }
 }}

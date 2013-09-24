@@ -1,10 +1,3 @@
-/**
- * Created with IntelliJ IDEA.
- * User: Théo
- * Date: 24/09/13
- * Time: 20:27
- * To change this template use File | Settings | File Templates.
- */
 package com.gobelins.brutina.Views {
 
 import com.gobelins.brutina.Constants;
