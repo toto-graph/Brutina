@@ -33,9 +33,9 @@ public class NewUserView extends View {
 
         _form = new Sprite();
         _form.x = 0;
-        _form.y = 150;
+        _form.y = 210;
         _form.width  = Constants.STAGE_WIDTH;
-        _form.height  = Constants.STAGE_HEIGHT - 150;
+        _form.height  = Constants.STAGE_HEIGHT - 210;
 
         _nameTextField = createTextField('Votre pseudo :', 20, 0);
         _emailTextField = createTextField('Votre email :', 20, 76);
