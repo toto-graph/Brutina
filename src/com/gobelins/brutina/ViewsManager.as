@@ -1,7 +1,7 @@
 package com.gobelins.brutina {
 
 import com.gobelins.brutina.Views.HomeView;
-import com.gobelins.brutina.Views.TestView;
+import com.gobelins.brutina.Views.NewUserView;
 
 import starling.display.Sprite;
 import starling.events.Event;
@@ -12,9 +12,9 @@ public class ViewsManager extends Sprite {
     private var _actual_view:int;
 
     public function ViewsManager() {
-        _views = new Array();
+        _views = [];
         _views[Constants.VIEW_HOME] = new HomeView();
-        _views[Constants.VIEW_TEST] = new TestView();
+        _views[Constants.VIEW_NEW_USER] = new NewUserView();
 
         this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
     }
@@ -22,8 +22,9 @@ public class ViewsManager extends Sprite {
     private function onAddedToStage(event:Event):void {
         this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 
-        _actual_view = Constants.VIEW_HOME;
-        addChild(_views[Constants.VIEW_HOME]);
+        if ( Game.user.exists ) _actual_view = Constants.VIEW_HOME;
+        else _actual_view = Constants.VIEW_NEW_USER;
+        addChild(_views[_actual_view]);
     }
 
     public function setView(num:int):void {

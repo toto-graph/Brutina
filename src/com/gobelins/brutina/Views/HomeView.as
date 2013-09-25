@@ -16,10 +16,6 @@ public class HomeView extends View {
     protected override function onAddedToStage(event:Event):void {
         var tf:TextField = new TextField(Constants.STAGE_WIDTH, Constants.STAGE_HEIGHT, "ON EST SUR LA HOME !!!");
         addChild(tf);
-
-        tf.addEventListener(TouchEvent.TOUCH, function(event:TouchEvent):void {
-            Game.views.setView(Constants.VIEW_TEST);
-        });
     }
 
     protected override function onRemovedFromStage(event:Event):void {
