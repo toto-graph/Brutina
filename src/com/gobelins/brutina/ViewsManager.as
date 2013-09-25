@@ -1,6 +1,7 @@
 package com.gobelins.brutina {
 
 import com.gobelins.brutina.Views.HomeView;
+import com.gobelins.brutina.Views.ListingView;
 import com.gobelins.brutina.Views.NewUserView;
 
 import starling.display.Sprite;
@@ -15,6 +16,7 @@ public class ViewsManager extends Sprite {
         _views = [];
         _views[Constants.VIEW_HOME] = new HomeView();
         _views[Constants.VIEW_NEW_USER] = new NewUserView();
+        _views[Constants.VIEW_LISTING] = new ListingView();
 
         this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
     }

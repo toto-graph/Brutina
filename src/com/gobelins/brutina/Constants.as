@@ -7,5 +7,6 @@ public class Constants {
 
     public static const VIEW_HOME:int = 0;
     public static const VIEW_NEW_USER:int = 1;
+    public static const VIEW_LISTING:int = 2;
 
 }}

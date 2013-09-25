@@ -2,6 +2,7 @@ package com.gobelins.brutina.Views {
 
 import com.gobelins.brutina.Assets;
 import com.gobelins.brutina.Constants;
+import com.gobelins.brutina.Game;
 
 import feathers.controls.TextInput;
 
@@ -21,6 +22,8 @@ public class NewUserView extends View {
     private var _emailTextField:TextField;
     private var _form:Sprite;
     private var _bg:Image;
+    //TODO: Delete
+    private var _testButton:Button;
 
     public function NewUserView() {
         super();
@@ -52,6 +55,22 @@ public class NewUserView extends View {
         _validateButton.height = 46;
         _validateButton.x = 20;
         _validateButton.y = 152;
+        _validateButton.addEventListener(Event.TRIGGERED, onValidate);
+
+        //TODO: Delete
+        _testButton = new Button(Texture.fromBitmap(new Assets.ValidateButton()), "Listing");
+        _testButton.width = Constants.STAGE_WIDTH - 40;
+        _testButton.height = 46;
+        _testButton.x = 20;
+        _testButton.y = 208;
+        _testButton.addEventListener(Event.TRIGGERED, function(event:Event):void {
+            Game.views.setView(Constants.VIEW_LISTING);
+        });
+    }
+
+    private function onValidate(event:Event):void {
+        _validateButton.removeEventListener(Event.TRIGGERED, onValidate);
+        //Game.views.setView(Constants.VIEW_HOME);
     }
 
     protected override function onAddedToStage(event:Event):void {
@@ -62,6 +81,9 @@ public class NewUserView extends View {
         _form.addChild(_nameInput);
         _form.addChild(_emailInput);
         _form.addChild(_validateButton);
+
+        //TODO: Delete
+        _form.addChild(_testButton);
     }
 
     private function createInput():TextInput {
